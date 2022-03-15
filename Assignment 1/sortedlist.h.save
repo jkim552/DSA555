@@ -1,0 +1,195 @@
+/*******************************************************************/
+/*                                                                 */
+/*  A1 Part 2: SortedList starter file                             */
+/*                                                                 */
+/*  version 1.1: fixed class declaration to include merge          */
+/*                                                                 */
+/*  Author1 Name: <name here>                                      */
+/*      - class/function list                                      */
+/*  Author2 Name: <name here>                                      */
+/*      - class/function list                                      */
+/*                                                                 */
+/*******************************************************************/
+
+
+template <typename T>
+
+class SortedList{
+	struct Node{
+		T data_;
+		Node* next_;
+		Node* prev_;
+		Node(const T& data=T{},Node* nx=nullptr,Node* pr=nullptr){
+			data_ = data;
+			next_ = ne;
+			prev_ = pr;
+		}
+	};
+	Node* front_;
+	Node* back_;
+
+public:
+	class const_iterator{
+	public:
+		const_iterator(){}
+		const_iterator& operator++(){}
+		const_iterator operator++(int){}
+		const_iterator& operator--(){}
+		const_iterator operator--(int){}
+		bool operator==(const_iterator rhs){}
+		bool operator!=(const_iterator rhs){}
+		const T& operator*()const{}
+	};
+	class iterator:public const_iterator{
+	public:
+		iterator(){}
+		iterator& operator++(){}
+		iterator operator++(int){}
+		iterator& operator--(){}
+		iterator operator--(int){}
+		T& operator*(){}
+		const T& operator*()const{}
+	};
+	SortedList();
+	~SortedList();
+	SortedList(const SortedList& rhs);
+	SortedList& operator=(const SortedList& rhs);
+	SortedList(SortedList&& rhs);
+	SortedList& operator=(SortedList&& rhs);
+	iterator begin(){
+		return front_->next_;
+	}
+	iterator end(){
+		return back_;    
+	}
+	const_iterator cbegin() const{
+		return front_->next_;
+	}
+	const_iterator cend() const{
+		return back_;
+	}
+	iterator insert(const T& data);
+	iterator search(const T& data);
+	const_iterator search(const T& data) const;
+	iterator erase(iterator it);
+	void merge(SortedList& other);
+	bool empty() const;
+	int size() const;
+};
+
+// Default Constructor
+template <typename T>
+SortedList<T>::SortedList(){
+	Node* front = new Node();
+	Node* back = new Node();
+	front->next_ = back;
+	front->prev_ = nullptr;
+	back->prev_ = front;
+	back->next_ = nullptr;
+	front_ = front;
+	back_ = back;
+}
+
+// Destructor
+template <typename T>
+SortedList<T>::~SortedList(){
+	
+
+}
+template <typename T>
+SortedList<T>::SortedList(const SortedList& rhs){
+
+}
+template <typename T>
+SortedList<T>& SortedList<T>::operator=(const SortedList& rhs){
+
+}
+template <typename T>
+SortedList<T>::SortedList(SortedList&& rhs){
+
+}
+
+template <typename T>
+SortedList<T>& SortedList<T>::operator=(SortedList&& rhs){
+
+}
+
+// adds data to the linked list and returns the iterator to newly added node
+template <typename T>
+typename SortedList<T>::iterator SortedList<T>::insert(const T& data){
+	Node* nn = new Node(data);
+	
+	// Check if the linked list is not empty
+	if(front_->next_ != back_){
+		// Using the iterator method to keep sorted
+		for(iterator i = begin(); i != end(); i++){
+			// In order to reduce the time for the loop,
+			// iterate until you find the value that is less than the current iterator
+			if(nn->data_ < i.curr_->data_){
+				i.curr_->prev_->next_ = nn;
+				nn->prev_ = i.curr_->prev_;
+				nn->next_ = i.curr_;
+				i.curr_->prev_ = nn;
+				return nn;
+			}
+		}
+		// If the value is higher than values in the linked list	
+		back_->prev_->next_ = nn;
+		nn->prev_ = back_->prev_;
+		nn->next_ = back_;
+		back_->prev_ = nn;
+	}
+	// if the list is empty
+	else{
+		front_->next_ = nn;
+		back_->prev_ = nn;
+		nn_->next_ = back_;
+		nn_->prev_ = front_;
+	}
+	return nn;
+}
+
+template <typename T>
+typename SortedList<T>::iterator SortedList<T>::search(const T& data){
+
+}
+
+template <typename T>
+typename SortedList<T>::const_iterator SortedList<T>::search(const T& data) const{
+
+}
+
+// Remove the node reffered to by it and return the iterator to node after the node removed
+template <typename T>
+typename SortedList<T>::iterator SortedList<T>::erase(iterator it){
+	Node* rm = it.curr_;
+	Node* B = rm;    // This node is used for a return value
+	
+	// This method should not delete the front and back node, So
+	if((rm != front_) && (rm != back_)){
+		// This node is the node after the node that is being deleted
+		B = rm->next_;
+		rm->prev_->next_ = rm->next_;
+		rm->next_->prev_ = rm->prev_;
+		delete rm;	
+	}
+	return B;
+}
+
+template <typename T>
+void SortedList<T>::merge(SortedList& other){
+	for(const_iterator i = begin(); i != end(); i++){
+		for(const_iterator j = other.begin(); j != other.end(); i++){
+			
+		}
+	}
+
+}
+template <typename T>
+bool SortedList<T>::empty() const{
+
+}
+template <typename T>
+int SortedList<T>::size() const{
+
+}

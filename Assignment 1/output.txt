@@ -1,0 +1,15 @@
+Test 1 - Simple testing on findCandidate(): passed.
+Test 2 - Simple testing on majorityElement(): passed.
+Test 3 - Testing findCandidate() on 100 element array: passed.
+Test 4 - Testing majorityElement() on 100 element array: passed.
+Test 5 - Testing findCandidate() on 5000 element array: passed.
+Test 6 - Testing majorityElement() on 5000 element array: passed.
+Test 7 - Testing findCandidate() on edge case with a majorityelement: passed.
+Test 8 - Testing majorityElement() on edge case with a majorityelement: passed.
+Test 9 - Testing findCandidate() on edge cases: passed.
+Test 10 - Testing majorityElement() on edge cases: passed.
+131073 * 4 arrays processed by findCandidate() in 0.0025138 seconds
+Test 11 - Timing Test on findCandidate(): passed.
+131073 * 4 arrays processed by majority element in 0.0052019 seconds
+Test 12 - Timing Test on majorityElement(): passed.
+Congratulations! You have passed testing for A1 part 1

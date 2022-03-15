@@ -1,0 +1,18 @@
+Test 1 - empty lists, size(), empty(), c/begin(), c/end(): passed.
+Test 2 - insert(), size(), empty(), c/begin(), c/end(): passed.
+Test 3 - increment operators pre and postfix: passed.
+Test 4 - decrement operators pre and postfix: passed.
+Test 5 - return values from increment operators: passed.
+Test 6 - return values from decrement operators: passed.
+Test 7 - search() functions: passed.
+Test 8 - erase(iterator): passed.
+Test 9 - merge function: passed.
+Test 10 - copy constructor: passed.
+Test 11 - copy assignment operator: passed.
+20000 insert(): 2.39386
+copy constructor on list with 20000 nodes: 0.0021632
+assignment operator on list with 20000 nodes: 0.001281
+move constructor on list with 20000 nodes: 2e-06
+move assignment on list with 20000 nodes: 1.3e-06
+Test 12 - large data set and timing run: passed.
+Congratulations! You have passed testing for A1 part 1
